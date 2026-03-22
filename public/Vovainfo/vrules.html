@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>worlds.dnd</title>
+
+    <style>
+      body {margin: 0;}
+      .sidebar {
+      position: fixed;left: 0;top: 0;width: 400px;height: 100vh;background: #333;color: white;}
+
+        .content { margin-left: 200px;padding: 20px; }
+        body { margin: 0; font-family: Arial, sans-serif; }
+        .col { max-width: 50ch; margin: 120px 24px 24px 24px; overflow-wrap: anywhere; }
+        header h1 { position: absolute; top: 32px; left: 64px; margin: 0; font-size: 48px; }
+        header h2 { position: static; margin: 0; font-size: 24px; }
+        main h2 { position: absolute; top: 40px; right: 240px; margin: 0; font-size: 40px; }
+        header h1 a {text-decoration: none; color: white;}
+        .rule {color:#F5DEB3}
+
+        .test {
+            margin-left: 500px;
+            margin-top: 50px;
+            color: white;
+            width: 20em; /* устанавливаем ширину блока */
+            height: 20em; /* устанавливаем высоту блока */
+            background-color: #333; /* устанавливает цвет заднего фона */
+            border-radius: 5px; /* углы скругляем
+            display: inline-block; /* устанавливаем элементы <div> как блочно-строчные (выстраиваем в линейку) */
+            padding: 15px; /* устанавливаем величину внутреннего отступа для всех сторон элемента */
+            background-clip : border-box; /* устанавливаем, что фон элемента занимает все пространство (включая границы элемента) */
+            }
+    </style>
+
+  </head>
+  <body style="background-color: #F5DEB3;">
+    <div class="sidebar">
+    <header>
+      <!--переход на главную страницу-->
+      <h1><a class="text" href="../index.html">worlds.dnd</a></h1>
+      <!--каталог-->
+      <div class="col">
+        <h2 style="margin-top: 0;">Выбери редакцию:</h2>
+        <select id="authorSelect" onchange="if(this.value) location.href=this.value+'.html';">
+          <option value="index">-- ГЛАВНАЯ СТРАНИЦА --</option>
+          <option value="Seva">Секретные файлы Севы</option>
+          <option value="Vova" selected>Секретные файлы Вовы</option>
+          <option value="Max">Секретные файлы Максима</option>
+        </select>
+        <h2><p>Каталог:</p>
+          <ul>
+            <li>классы</li>
+            <li>расы</li>
+            <li>заклинания</li>
+            <li>предметы</li>
+            <li>монстры</li>
+            <li>проверки</li>
+            <div class="rule"><li>новые правила<br>редакции</li></div>
+          </ul>
+        </h2>
+        <!--куб д20-->
+        <figure>
+          <img src="https://www.svgrepo.com/show/515940/dnd-5e-character-keep.svg" alt="D20 dice" style="width:240px;height:auto;position:absolute;left:72px;bottom:16px;">
+        </figure>
+      </div>
+    </header>
+    </div>
+  
+    <main>
+        <div class="content">
+        <h2>Информация об обновлениях</h2>
+        </div>
+        <div class = "test">
+            Характеристика: Удача
+            <p></p>
+            Новая основная характеристика, считающаяся 7-ой. Считается основной характеристикой, только не имеет спасброска и навыков, зависящих от удачи.
+        </div>
+    </main>
+
+  </body>
+</html>

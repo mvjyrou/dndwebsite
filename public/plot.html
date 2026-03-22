@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>worlds.dnd</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			a {
+				text-decoration: none;
+				color: #fff;
+				transition: all 0.3s ease;
+			}
+			a:hover {
+				color: #F5DEB3;
+				background-color: none;
+				border-radius: 4px;
+			}
+			.content {
+				margin-left: 42%;
+				margin-top: 5px;
+				font-size: 48px;
+				color: #fff;
+				width: max-content;
+				height: 1em;
+				background-color: #333;
+				border-radius: 5px;
+				display: inline-block;
+				padding: 15px;
+				background-clip: border-box;
+			}
+			.insidebar {
+				max-width: 50ch;
+				margin-top: 120px;
+				margin-right: 24px;
+				margin-left: 24px;
+				margin-bottom: 24px;
+			}
+			.links {
+				margin-left: 24px;
+				margin-top: 36px;
+			}
+			.sidebar {
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 400px;
+				height: 100vh;
+				background: #333;
+				color: #fff;
+			}
+			body {
+				font-family: Arial, sans-serif;
+			}
+			header h1 {
+				position: absolute;
+				top: 32px;
+				left: 64px;
+				margin: 0;
+				font-size: 48px;
+			}
+			.select {
+				color:#F5DEB3
+			}
+			.box {
+				position: relative;
+				margin-left: 450px;
+				margin-top: 50px;
+				color: #fff;
+				width: 20em;
+				height: 20em;
+				background-color: #333;
+				border-radius: 5px;
+				display: inline-block;
+				padding: 15px;
+				background-clip : border-box;
+			}
+			.bigbox {
+				position: relative;
+				margin-left: 425px;
+				margin-top: 25px;
+				margin-right: 25px;
+				background-color: #333;
+				color: #fff;
+				font-size: 30px;
+				padding: 15px;
+				border-radius: 5px;
+			}
+			.authorbox {
+				position: absolute;
+				bottom: 15px;
+				right: 15px;
+			}
+
+			.fullscreen-overlay {
+				display: none;
+				position: fixed;
+				top: 0; left: 0;
+				width: 100%; height: 100%;
+				background: rgba(0,0,0,0.9);
+				z-index: 9999;
+				justify-content: center;
+				align-items: center;
+			}
+			.fullscreen-overlay:target {
+				display: flex;
+			}
+			.fullscreen-overlay img {
+				max-width: 90%;
+				max-height: 90%;
+			}
+			.close {
+				position: absolute;
+				top: 20px; right: 20px;
+				color: #fff;
+				text-decoration: none;
+				font-size: 30px;
+			}
+
+		</style>
+	</head>
+	<body style="background-color: #F5DEB3;">
+		<div class="sidebar">
+		<header>
+			<!--Main page-->
+			<h1><a class="text" href="index.html">worlds.dnd</a></h1>
+			<!--All links-->
+			<div class="insidebar">
+				<h2 style="margin-top: 0;">Выбери редакцию:</h2>
+				<select id="authorSelect" onchange="if(this.value) location.href=this.value+'.html';">
+					<option value="index">-- ГЛАВНАЯ СТРАНИЦА --</option>
+          <option value="Vova" disabled>Секретные файлы Вовы</option>
+          <option value="Max" disabled>Былина</option>
+				</select>
+				<div class="links">
+					<ul><h2>
+						<li><a href="classes.html">классы</a></li>
+						<li><a href="races.html">расы</a></li>
+						<li><a href="spells.html">заклинания</a></li>
+						<li><a href="items.html">предметы</a></li>
+						<li><a href="monsters.html">монстры</a></li>
+						<li><a href="mechanics.html">основные механики</a></li>
+						<li><div class="select">лор</div></li>
+						<li><a href="rules.html">новые правила<br>редакции</a></li>
+					</h2></ul>
+				</div>
+
+				<!--Dice D20-->
+				<figure>
+					<img src="https://www.svgrepo.com/show/515940/dnd-5e-character-keep.svg" alt="D20 dice" style="width:240px;height:auto;position:absolute;left:72px;bottom:16px;">
+				</figure>
+			</div>
+		</header>
+		</div>
+
+		<main>
+			<div class="bigbox">
+				<div style="text-align: center; font-size: 48px;">Пантеон богинь хисс</div><br>
+				<div style="max-width: 50ch;">1. Крр’Та (Война) — богиня битвы, агрессии, захвата и колонизации. Покровительствует хисс’ид<br><br>
+					2. Маа’Жн (Жизнь) — богиня размножения и роста роя.<br><br>
+					3. Ссэ’Рак (Наслаждение) — богиня экстаза, связи и единства роя.<br><br>
+					4. Хэ’Лисс (Гибкость) — богиня ловкости, проворства, обмана и адаптации; возвращает отколовшихся хисс.<br><br>
+					5. Тха’Рук (Путь) — богиня движения, миграций и коммуникации; формирует язык хисс. Покровительствует хисс’рак.<br><br>
+					6. Наа’Кет (Аркана) — богиня знаний, магии и смерти. Покровительствует хисс’сан.<br><br>
+					7. Исс’Тара (Всевидящая) — богиня осознания, предела и выбора итерации; определяет смену фаз роя.<br><br><br>
+				</div>
+				<div style="position: absolute; box-sizing: border-box; width: 450px; height: 500px; top: 115px; right: 50px; border: 2px solid #fff; border-radius: 5px; padding: 25px;">
+					<a href="#image-fullscreen">
+						<img src="images/Mpanteon.png" alt="Panteon" width="400px" style="position: absolute; bottom: 25px;">
+					</a>
+					<div style="font-size: 24px; text-align: center;">Изображение символов богинь</div>
+				</div>
+				<div class="authorbox">Из: Былина</div>
+			</div>
+		</main>
+
+		<div id="image-fullscreen" class="fullscreen-overlay">
+			<a href="#" class="close">X</a>
+			<img src="images/Mpanteon.png" alt="Full Screen">
+		</div>
+
+	</body>
+</html>
