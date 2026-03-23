@@ -3,8 +3,6 @@
 	<head>
 		<meta charset="utf-8">
 		<title>worlds.dnd</title>
-		<link href="pagefind/pagefind-ui.css" rel="stylesheet">
-		<script src="pagefind/pagefind-ui.js"></script>
 		<style>
 			* {
 				margin: 0;
@@ -76,26 +74,25 @@
 	<body style="background-color: #F5DEB3;">
 		<div class="sidebar" data-pagefind-ignore>
 			<!--Main Page-->
-			<header><h1><a class="text" href="index.html">worlds.dnd</a></h1></header>
+			<header><h1><a class="text" href="../index.html">worlds.dnd</a></h1></header>
 			<!--All Links-->
 			<div class="insidebar">
 				<h2 style="margin-top: 0;">Выбери редакцию:</h2>
 				<select id="authorSelect" onchange="if(this.value) location.href=this.value+'.html';">
-					<option value="index" selected disabled>-- ГЛАВНАЯ СТРАНИЦА --</option>
-					<option value="Vovainfo/Vova" >Земли Богов</option>
-					<option value="Maxinfo/Max" >Былина</option>
-					<option value="Sevainfo/Seva" >Бри</option>
+					<option value="../Vovainfo/Vova" selected disabled>Земли Богов</option>
+					<option value="../Maxinfo/Max" >Былина</option>
+					<option value="../Sevainfo/Seva" >Бри</option>
 				</select>
 				<div class="links">
 					<ul><h2>
-						<li><a href="classes.html">классы</a></li>
-						<li><a href="races.html">расы</a></li>
-						<li><a href="spells.html">заклинания</a></li>
-						<li><div class="select">предметы</div></li>
-						<li><a href="monsters.html">монстры</a></li>
-						<li><a href="mechanics.html">механики</a></li>
-						<li><a href="plot.html">лор</a></li>
-						<li><a href="rules.html">правила<br>редакции</a></li>
+						<li><a href="v_classes.html">классы</a></li>
+						<li><a href="v_races.html">расы</a></li>
+						<li><a href="v_spells.html">заклинания</a></li>
+						<li><a href="v_items.html">предметы</a></li>
+						<li><a href="v_monsters.html">монстры</a></li>
+						<li><a href="v_mechanics.html">механики</a></li>
+						<li><a href="v_plot.html">лор</a></li>
+						<li><div class="select">правила<br>редакции</div></li>
 					</h2></ul>
 				</div>
 			<!--Dice D20-->
@@ -104,7 +101,6 @@
 			</figure>
 		</div>
 		<main>
-			<div id="search" style="margin-left: 450px; padding: 50px;"></div>
 			<div class = "box">
 				Характеристика: Удача
 				<p></p><br>
@@ -112,25 +108,5 @@
 				<div class="authorbox">Из: Земли Богов</div>
 			</div>
 		</main>
-		<script>
-			window.addEventListener('DOMContentLoaded', (event) => {
-				new PagefindUI({
-					element: "#search",
-					translations: {
-						placeholder: "Поиск",
-						clear_search: "Очистить",
-						load_more: "Показать еще",
-						search_label: "Поиск по сайту",
-						filters_label: "Фильтры",
-						zero_results: "Ничего не найдено по запросу [SEARCH_TERM]",
-						many_results: "Найдено [COUNT] результатов для [SEARCH_TERM]",
-						one_result: "Найден [COUNT] результат для [SEARCH_TERM]",
-						alt_search: "Ничего не найдено по запросу [SEARCH_TERM]. Показаны результаты по запросу [DIFFERENT_TERM] вместо этого",
-						search_suggestion: "Ничего не найдено по запросу [SEARCH_TERM]. Попробуйте один из следующих вариантов:",
-						searching: "Поиск по запросу [SEARCH_TERM]..."
-					}
-				});
-			});
-		</script>
 	</body>
 </html>

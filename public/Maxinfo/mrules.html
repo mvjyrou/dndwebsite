@@ -1,62 +1,112 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>worlds.dnd</title>
-    <style>
-      body {margin: 0;}
-      .sidebar {
-      position: fixed;left: 0;top: 0;width: 400px;height: 100vh;background: #333;color: white;}
-
-        .content { margin-left: 200px;padding: 20px; }
-        body { margin: 0; font-family: Arial, sans-serif; }
-        .col { max-width: 50ch; margin: 120px 24px 24px 24px; overflow-wrap: anywhere; }
-        header h1 { position: absolute; top: 32px; left: 64px; margin: 0; font-size: 48px; }
-        header h2 { position: static; margin: 0; font-size: 24px; }
-        main h2 { position: absolute; top: 40px; right: 240px; margin: 0; font-size: 40px; }
-        header h1 a {text-decoration: none; color: white;}
-        .rule {color:#F5DEB3}
-    </style>
-  </head>
-  <body style="background-color: #F5DEB3;">
-    <div class="sidebar">
-    <header>
-      <!--переход на главную страницу-->
-      <h1><a class="text" href="index.html">worlds.dnd</a></h1>
-      <!--каталог-->
-      <div class="col">
-        <h2 style="margin-top: 0;">Выбери редакцию:</h2>
-        <select id="authorSelect" onchange="if(this.value) location.href=this.value+'.html';">
-          <option value="index">-- ГЛАВНАЯ СТРАНИЦА --</option>
-          <option value="Seva">Секретные файлы Севы</option>
-          <option value="Vova">Секретные файлы Вовы</option>
-          <option value="Max" selected>Секретные файлы Максима</option>
-        </select>
-        <h2><p>Каталог:</p>
-          <ul>
-            <li>классы</li>
-            <li>расы</li>
-            <li>заклинания</li>
-            <li>предметы</li>
-            <li>монстры</li>
-            <li>проверки</li>
-            <div class="rule"><li>новые правила<br>редакции</li></div>
-          </ul>
-        </h2>
-        <!--куб д20-->
-        <figure>
-          <img src="https://www.svgrepo.com/show/515940/dnd-5e-character-keep.svg" alt="D20 dice" style="width:240px;height:auto;position:absolute;left:72px;bottom:16px;">
-        </figure>
-      </div>
-    </header>
-    </div>
-  
-  <main>
-    <div class="content">
-      <h2>Информация об обновлениях</h2>
-    </div>
-    <h3></h3>
-  </main>
-
-  </body>
+	<head>
+		<meta charset="utf-8">
+		<title>worlds.dnd</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			a {
+				text-decoration: none;
+				color: white;
+				transition: all 0.3s ease;
+			}
+			a:hover {
+				color: #F5DEB3;
+				background-color: none;
+				border-radius: 4px;
+			}
+			.insidebar {
+				max-width: 50ch;
+				margin-top: 120px;
+				margin-right: 24px;
+				margin-left: 24px;
+				margin-bottom: 24px;
+			}
+			.links {
+				margin-left: 24px;
+				margin-top: 36px;
+			}
+			.sidebar {
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 400px;
+				height: 100vh;
+				background: #333;
+				color: white;
+			}
+			body {
+				font-family: Arial, sans-serif;
+			}
+			header h1 {
+				position: absolute;
+				top: 32px;
+				left: 64px;
+				margin: 0;
+				font-size: 48px;
+			}
+			.select {
+				color:#F5DEB3
+			}
+			.box {
+				position: relative;
+				margin-left: 450px;
+				margin-top: 50px;
+				color: white;
+				width: 20em;
+				height: 20em;
+				background-color: #333;
+				border-radius: 5px;
+				display: inline-block;
+				padding: 15px;
+				background-clip : border-box;
+			}
+			.authorbox {
+				position: absolute;
+				bottom: 15px;
+				right: 15px;
+			}
+		</style>
+	</head>
+	<body style="background-color: #F5DEB3;">
+		<div class="sidebar" data-pagefind-ignore>
+			<!--Main Page-->
+			<header><h1><a class="text" href="../index.html">worlds.dnd</a></h1></header>
+			<!--All Links-->
+			<div class="insidebar">
+				<h2 style="margin-top: 0;">Выбери редакцию:</h2>
+				<select id="authorSelect" onchange="if(this.value) location.href=this.value+'.html';">
+					<option value="../Vovainfo/Vova" >Земли Богов</option>
+					<option value="../Maxinfo/Max" selected disabled>Былина</option>
+					<option value="../Sevainfo/Seva" >Бри</option>
+				</select>
+				<div class="links">
+					<ul><h2>
+						<li><a href="m_classes.html">классы</a></li>
+						<li><a href="m_races.html">расы</a></li>
+						<li><a href="m_spells.html">заклинания</a></li>
+						<li><a href="m_items.html">предметы</a></li>
+						<li><a href="m_monsters.html">монстры</a></li>
+						<li><a href="m_mechanics.html">механики</a></li>
+						<li><a href="m_plot.html">лор</a></li>
+						<li><div class="select">правила<br>редакции</div></li>
+					</h2></ul>
+				</div>
+			<!--Dice D20-->
+			<figure>
+				<img src="https://www.svgrepo.com/show/515940/dnd-5e-character-keep.svg" alt="D20 dice" style="width:240px;height:auto;position:absolute;left:72px;bottom:16px;">
+			</figure>
+		</div>
+		<main>
+			<div class = "box">
+				Характеристика: Удача
+				<p></p><br>
+				Новая основная характеристика, считающаяся 7-ой. Считается основной характеристикой, только не имеет спасброска и навыков, зависящих от неё.<br>
+				<div class="authorbox">Из: Земли Богов</div>
+			</div>
+		</main>
+	</body>
 </html>

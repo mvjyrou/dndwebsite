@@ -122,15 +122,14 @@
 		</style>
 	</head>
 	<body style="background-color: #F5DEB3;">
-		<div class="sidebar">
-		<header>
+		<div class="sidebar" data-pagefind-ignore>
 			<!--Main page-->
-			<h1><a class="text" href="index.html">worlds.dnd</a></h1>
+			<header><h1><a class="text" href="index.html">worlds.dnd</a></h1></header>
 			<!--All links-->
 			<div class="insidebar">
 				<h2 style="margin-top: 0;">Выбери редакцию:</h2>
 				<select id="authorSelect" onchange="if(this.value) location.href=this.value+'.html';">
-					<option value="index" selected>-- ГЛАВНАЯ СТРАНИЦА --</option>
+					<option value="index" selected disabled>-- ГЛАВНАЯ СТРАНИЦА --</option>
 					<option value="Vovainfo/Vova" >Земли Богов</option>
 					<option value="Maxinfo/Max" >Былина</option>
 					<option value="Sevainfo/Seva" >Бри</option>
@@ -142,20 +141,19 @@
 						<li><a href="spells.html">заклинания</a></li>
 						<li><a href="items.html">предметы</a></li>
 						<li><a href="monsters.html">монстры</a></li>
-						<li><a href="mechanics.html">основные механики</a></li>
+						<li><a href="mechanics.html">механики</a></li>
 						<li><a href="plot.html">лор</a></li>
-						<li><a href="rules.html">новые правила<br>редакции</a></li>
+						<li><a href="rules.html">правила<br>редакции</a></li>
 					</h2></ul>
 				</div>
 				<!--Dice D20-->
 				<figure>
 					<img src="https://www.svgrepo.com/show/515940/dnd-5e-character-keep.svg" alt="D20 dice" style="width:240px;height:auto;position:absolute;left:72px;bottom:16px;">
-				</figure>
+				</figure>	
 			</div>
-		</header>
 		</div>
 		<main>
-			<div id="search" style="margin-top: 100px;"></div>
+			<div id="search" style="margin-left: 450px; padding: 50px;"></div>
 			<div class="content">
 				Информация об обновлениях
 			</div>
@@ -168,7 +166,7 @@
 				<br><br>
 				-Добавлен новый дизайн.
 				<br><br>
-				-Поиск.
+				-ПОИСК СУКА ЗАЕБАЛСЯ НАХУЙ ЭТУ ХУЙНЮ БЛЯТЬ НАСТРАИВАТЬ
 				<div class="authorbox">От: Бибиджон Беброувич</div>
 			</div>
 			<div class="box" style="margin-left: 40%; width: 47em;">
@@ -194,12 +192,20 @@
 		</main>
 		<script>
 			window.addEventListener('DOMContentLoaded', (event) => {
-				new PagefindUI({ 
-					element: "#search", 
-					showSubResults: true,
+				new PagefindUI({
+					element: "#search",
 					translations: {
-						placeholder: "Поиск по базе знаний...",
-						searching: "Ищем: [SEARCH_TERM]"
+						placeholder: "Поиск",
+						clear_search: "Очистить",
+						load_more: "Показать еще",
+						search_label: "Поиск по сайту",
+						filters_label: "Фильтры",
+						zero_results: "Ничего не найдено по запросу [SEARCH_TERM]",
+						many_results: "Найдено [COUNT] результатов для [SEARCH_TERM]",
+						one_result: "Найден [COUNT] результат для [SEARCH_TERM]",
+						alt_search: "Ничего не найдено по запросу [SEARCH_TERM]. Показаны результаты по запросу [DIFFERENT_TERM] вместо этого",
+						search_suggestion: "Ничего не найдено по запросу [SEARCH_TERM]. Попробуйте один из следующих вариантов:",
+						searching: "Поиск по запросу [SEARCH_TERM]..."
 					}
 				});
 			});
