@@ -3,135 +3,24 @@
 	<head>
 		<meta charset="utf-8">
 		<title>worlds.dnd</title>
-		<link href="pagefind/pagefind-ui.css" rel="stylesheet">
-		<script src="pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="../pagefind/pagefind-ui.css">
+		<script src="../pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="../style.css">
 		<style>
-			* {
-				margin: 0;
-				padding: 0;
-			}
-			a {
-				text-decoration: none;
-				color: white;
-				transition: all 0.3s ease;
-			}
-			a:hover {
-				color: #F5DEB3;
-				background-color: none;
-				border-radius: 4px;
-			}
-			.content {
-				margin-left: 42%;
-				margin-top: 5px;
-				font-size: 48px;
-				color: white;
-				width: max-content;
-				height: 1em;
-				background-color: #333;
-				border-radius: 5px;
-				display: inline-block;
-				padding: 15px;
-				background-clip: border-box;
-			}
-			.insidebar {
-				max-width: 50ch;
-				margin-top: 120px;
-				margin-right: 24px;
-				margin-left: 24px;
-				margin-bottom: 24px;
-			}
-			.links {
-				margin-left: 24px;
-				margin-top: 36px;
-			}
-			.sidebar {
-				position: fixed;
-				left: 0;
-				top: 0;
-				width: 400px;
-				height: 100vh;
-				background: #333;
-				color: white;
-			}
 			body {
-				font-family: Arial, sans-serif;
-				width: 100%;
-				min-height: 100vh;
 				background: fixed url(https://cdn-s-static.arzamas.academy/uploads/ckeditor/pictures/2224/content_660.jpg) no-repeat center/cover;
 				border-image: fill 0 linear-gradient(#0007, #0007)
 			}
-			header h1 {
-				position: absolute;
-				top: 32px;
-				left: 64px;
-				margin: 0;
-				font-size: 48px;
-			}
-			.select {
-				color:#F5DEB3
-			}
-			.box {
-				position: relative;
-				margin-left: 450px;
-				margin-top: 50px;
-				color: white;
-				width: 20em;
-				height: 20em;
-				background-color: #333;
-				border-radius: 5px;
-				display: inline-block;
-				padding: 15px;
-				background-clip : border-box;
-			}
-			.bigbox {
-				position: relative;
-				margin-left: 425px;
-				margin-top: 25px;
-				margin-right: 25px;
-				background-color: #333;
-				color: #fff;
-				font-size: 30px;
-				padding: 15px;
-				border-radius: 5px;
-			}
-			.authorbox {
-				position: absolute;
-				bottom: 15px;
-				right: 15px;
-			}
-			.fullscreen-overlay {
-				display: none;
-				position: fixed;
-				top: 0; left: 0;
-				width: 100%; height: 100%;
-				background: rgba(0,0,0,0.9);
-				z-index: 9999;
-				justify-content: center;
-				align-items: center;
-			}
-			.fullscreen-overlay:target {
-				display: flex;
-			}
-			.fullscreen-overlay img {
-				max-width: 90%;
-				max-height: 90%;
-			}
-			.close {
-				position: absolute;
-				top: 20px; right: 20px;
-				color: #fff;
-				text-decoration: none;
-				font-size: 30px;
-			}
 		</style>
 	</head>
-	<body style="background-color: #F5DEB3;">
+	<body>
 		<div class="sidebar" data-pagefind-ignore>
 			<!--Main page-->
-			<header><h1><a class="text" href="../index.html">worlds.dnd</a></h1></header>
+			<div class="mainpage"><a href="../index.html"><b>worlds.dnd</b></a></div>
+			<div class="mainpage" style="margin-top: 70px; left: 85px;"><a href="Max.html"><b>Былина</b></a></div>
 			<!--All links-->
-			<div class="insidebar">
-				<h2 style="margin-top: 0;">Выбери редакцию:</h2>
+			<div class="insidebar" style="margin-top: 170px;">
+				<h2>Выбери редакцию:</h2>
 				<select id="authorSelect" onchange="if(this.value) location.href=this.value+'.html';">
 					<option value="../Vovainfo/Vova" >Земли Богов</option>
 					<option value="../Maxinfo/Max" selected disabled>Былина</option>
@@ -160,7 +49,7 @@
 			<div class="content">
 				Информация об обновлениях
 			</div>
-			<div class="box" style="margin-left: 40%; width: 47em;">
+			<div class="box" style="margin-left: 30%; width: 47em; margin-top: 50px;">
 				<h2>Обновление 0.0.3</h2>
 				<br><br>
 				<h3>Добавлено:</h3><br>
@@ -169,27 +58,27 @@
 				<br><br>
 				-Добавлен новый дизайн.
 				<br><br>
-				-ПОИСК СУКА ЗАЕБАЛСЯ НАХУЙ ЭТУ ХУЙНЮ БЛЯТЬ НАСТРАИВАТЬ
+				-ПОИСК СУКА ЗАЕБАЛСЯ НАХУЙ ЭТУ ХУЙНЮ БЛЯТЬ НАСТРАИВАТЬ</h3><br><br>
 				<div class="authorbox">От: Бибиджон Беброувич</div>
 			</div>
-			<div class="box" style="margin-left: 40%; width: 47em;">
+			<div class="box" style="margin-left: 30%; width: 47em; margin-top: 50px;">
 				<h2>Обновление 0.0.2</h2>
 				<br><br>
 				<h3>Добавлено:</h3><br>
 				<h3 style="padding-left: 10px;">
 				-Презентабельный вид для показа Севе.
 				<br><br>
-				-Да.
+				-Да.</h3><br><br>
 				<div class="authorbox">От: Бибиджон Беброувич</div>
 			</div>
-			<div class="box" style="margin-left: 40%; width: 47em; margin-bottom: 50px;">
+			<div class="box" style="margin-left: 30%; width: 47em; margin-top: 50px; margin-bottom: 50px;">
 				<h2>Обновление 0.0.1</h2>
 				<br><br>
 				<h3>Добавлено:</h3><br>
 				<h3 style="padding-left: 10px;">
 				Рабочие ссылки классы, расы, и т.д. на главной странице.
 				<br><br>
-				Дизайн ссылок и текста.
+				Дизайн ссылок и текста.</h3><br><br>
 				<div class="authorbox">От: Бибиджон Беброувич</div>
 			</div>
 		</main>

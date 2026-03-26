@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>worlds.dnd</title>
+		<link rel="stylesheet" href="../style.css">
+		<style>
+			body {
+				background: fixed url(https://cdn-s-static.arzamas.academy/uploads/ckeditor/pictures/2224/content_660.jpg) no-repeat center/cover;
+				border-image: fill 0 linear-gradient(#0007, #0007)
+			}
+		</style>
+	</head>
+	<body style="background-color: #F5DEB3;">
+		<div class="sidebar" data-pagefind-ignore>
+			<!--Main Page-->
+			<div class="mainpage"><a href="../index.html"><b>worlds.dnd</b></a></div>
+			<div class="mainpage" style="margin-top: 70px; left: 85px;"><a href="Max.html"><b>Былина</b></a></div>
+			<!--All Links-->
+			<div class="insidebar">
+				<h2>Выбери редакцию:</h2>
+				<select id="authorSelect" onchange="if(this.value) location.href=this.value+'.html';">
+					<option value="../Vovainfo/Vova" >Земли Богов</option>
+					<option value="../Maxinfo/Max" selected disabled>Былина</option>
+					<option value="../Sevainfo/Seva" >Бри</option>
+				</select>
+				<div class="links">
+					<ul><h2>
+						<li><a href="m_classes.html">классы</a></li>
+						<li><a href="m_races.html">расы</a></li>
+						<li><a href="m_spells.html">заклинания</a></li>
+						<li><a href="m_items.html">предметы</a></li>
+						<li><a href="m_monsters.html">монстры</a></li>
+						<li><a href="m_mechanics.html">механики</a></li>
+						<li><a href="m_plot.html">лор</a></li>
+						<li><div class="select">правила<br>редакции</div></li>
+					</h2></ul>
+				</div>
+				<!--Dice D20-->
+				<figure>
+					<img src="https://www.svgrepo.com/show/515940/dnd-5e-character-keep.svg" alt="D20 dice" style="width:240px;height:auto;position:absolute;left:72px;bottom:16px;">
+				</figure>
+			</div>
+		</div>
+		<main>
+			<div class = "box" style="margin-left: 450px; margin-right: 50px; margin-top: 50px; height: 800px;">
+				<div class="img_description" style="right: 15px; top: 100px">
+					<div style="background-color: #F5DEB3; color: #000;"><b>Последствия критов</b></div><br>
+					<a href="#fsimg1"><img src="/images/Crits.jpg" alt="Нажми меня" style="cursor: pointer; width: 300px;"></a>
+				</div>
+			</div>
+		</main>
+
+		<div id="fsimg1" class="fullscreen-overlay">
+			<a href="#" class="close">&times;</a>
+			<img src="/images/Crits.jpg" alt="Полный экран">
+		</div>
+	</body>
+</html>
