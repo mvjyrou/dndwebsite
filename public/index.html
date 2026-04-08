@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>worlds.dnd</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="pagefind/pagefind-ui.css" rel="stylesheet">
 		<script src="pagefind/pagefind-ui.js"></script>
 		<link rel="stylesheet" href="style.css">
@@ -45,7 +46,7 @@
 					</h2></ul>
 				</div>
 				<!--Dice D20-->
-				<img src="https://www.svgrepo.com/show/515940/dnd-5e-character-keep.svg" alt="D20 dice" style="position: relative; width: 100%; top: 150px;">
+				<img src="https://www.svgrepo.com/show/515940/dnd-5e-character-keep.svg" alt="D20 dice" style="position: absolute; width: 100%; bottom: 0px; left: 5px;">
 			</div>
 		</div>
 		<main>
@@ -58,11 +59,11 @@
 				<br><br>
 				<h3>Добавлено:</h3><br>
 				<h3 style="padding-left: 10px;">
-				-...
+				-Возможность скачать сайт как приложение
 				<br><br>
-				-....
+				-Разрешение под телефоны
 				<br><br>
-				-...</h3><br><br>
+				-Оффлайн режим в приложении</h3><br><br>
 				<div class="authorbox">От: Бибиджон Беброувич</div>
 			</div>
 			<div class="newsbox">
@@ -74,7 +75,7 @@
 				<br><br>
 				-Добавлен новый дизайн.
 				<br><br>
-				-ПОИСК СУКА ЗАЕБАЛСЯ НАХУЙ ЭТУ ХУЙНЮ БЛЯТЬ НАСТРАИВАТЬ</h3><br><br>
+				-Поиск</h3><br><br>
 				<div class="authorbox">От: Бибиджон Беброувич</div>
 			</div>
 			<div class="newsbox">
@@ -105,7 +106,7 @@
 				sidebar.classList.toggle('active');
 			}
 			// Авто-закрытие при клике на ссылки
-			document.querySelectorAll('.sidebar a, .sidebar select').forEach(link => {
+			document.querySelectorAll('.sidebar a,').forEach(link => {
 				link.addEventListener('click', () => {
 					const sidebar = document.querySelector('.sidebar');
 					// Убираем активный класс, чтобы меню уехало назад
@@ -113,7 +114,6 @@
 				});
 			});
 		</script>
-
 		<script>
 			window.addEventListener('DOMContentLoaded', (event) => {
 				new PagefindUI({
@@ -134,7 +134,6 @@
 				});
 			});
 		</script>
-
 		<script>
 			const isPWA = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
 			if ('serviceWorker' in navigator) {
