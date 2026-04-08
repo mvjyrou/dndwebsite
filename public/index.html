@@ -138,7 +138,7 @@
 		<script>
 			const isPWA = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
 			if ('serviceWorker' in navigator) {
-				// if (isPWA) {
+				if (isPWA) {
 					// РЕЖИМ ПРИЛОЖЕНИЯ: Регистрируем и следим за обновлениями
 					window.addEventListener('load', () => {
 						navigator.serviceWorker.register('../sw.js').then(reg => {
@@ -157,15 +157,16 @@
 							});
 						});
 					});
-			} //else {
-					//РЕЖИМ БРАУЗЕРА: Удаляем SW, чтобы не занимать место кэшем
-					//navigator.serviceWorker.getRegistrations().then(registrations => {
-					//	for (let registration of registrations) {
-					//		registration.unregister();
-					//	}
-					//});
-				//}
-			//}
+				}
+				else {
+					// РЕЖИМ БРАУЗЕРА: Удаляем SW, чтобы не занимать место кэшем
+					navigator.serviceWorker.getRegistrations().then(registrations => {
+						for (let registration of registrations) {
+							registration.unregister();
+						}
+					});
+				}
+			}
 		</script>
 	</body>
 </html>
