@@ -141,7 +141,7 @@
 				if (isPWA) {
 					// РЕЖИМ ПРИЛОЖЕНИЯ: Регистрируем и следим за обновлениями
 					window.addEventListener('load', () => {
-						navigator.serviceWorker.register('/sw.js').then(reg => {
+						navigator.serviceWorker.register('../sw.js').then(reg => {
 							console.log('PWA активен');
 							
 							reg.addEventListener('updatefound', () => {
