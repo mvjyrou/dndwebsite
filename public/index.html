@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>worlds.dnd</title>
+		<link href="pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="style.css">
+		<style>
+			body {
+				background: fixed url("images/bgmainpage.png") no-repeat center/cover;
+				border-image: fill 0 linear-gradient(#0002, #0009)
+			}
+		</style>
+		<link rel="manifest" href="manifest.json">
+	</head>
+	<body>
+		<div class="menu-toggle" onclick="toggleMenu()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="sidebar" data-pagefind-ignore>
+			<!--Main page-->
+			<div class="mainpage"><a href="index.html"><b>worlds.dnd</b></a></div>
+			<!--All links-->
+			<div class="insidebar">
+				<h2>Выбери редакцию:</h2>
+				<select id="authorSelect" onchange="if(this.value) location.href=this.value+'.html';">
+					<option value="index" selected disabled>-- ГЛАВНАЯ СТРАНИЦА --</option>
+					<option value="Vovainfo/Vova" >Земли Богов</option>
+					<option value="Maxinfo/Max" >Былина</option>
+					<option value="Sevainfo/Seva" >Бри</option>
+				</select>
+				<div class="links">
+					<ul><h2>
+						<li><a href="classes.html">классы</a></li>
+						<li><a href="races.html">расы</a></li>
+						<li><a href="spells.html">заклинания</a></li>
+						<li><a href="items.html">предметы</a></li>
+						<li><a href="monsters.html">монстры</a></li>
+						<li><a href="mechanics.html">механики</a></li>
+						<li><a href="plot.html">лор</a></li>
+						<li><a href="rules.html">правила<br>редакции</a></li>
+					</h2></ul>
+				</div>
+				<!--Dice D20-->
+				<img src="https://www.svgrepo.com/show/515940/dnd-5e-character-keep.svg" alt="D20 dice" style="position: relative; width: 100%; top: 150px;">
+			</div>
+		</div>
+		<main>
+			<div id="search" style="margin-left: 10px; padding: 50px;"></div>
+			<div class="content">
+				Информация об обновлениях
+			</div>
+			<div class="newsbox">
+				<h2>Обновление 0.0.4</h2>
+				<br><br>
+				<h3>Добавлено:</h3><br>
+				<h3 style="padding-left: 10px;">
+				-...
+				<br><br>
+				-....
+				<br><br>
+				-...</h3><br><br>
+				<div class="authorbox">От: Бибиджон Беброувич</div>
+			</div>
+			<div class="newsbox">
+				<h2>Обновление 0.0.3</h2>
+				<br><br>
+				<h3>Добавлено:</h3><br>
+				<h3 style="padding-left: 10px;">
+				-Добавлены редакции и ссылки.
+				<br><br>
+				-Добавлен новый дизайн.
+				<br><br>
+				-ПОИСК СУКА ЗАЕБАЛСЯ НАХУЙ ЭТУ ХУЙНЮ БЛЯТЬ НАСТРАИВАТЬ</h3><br><br>
+				<div class="authorbox">От: Бибиджон Беброувич</div>
+			</div>
+			<div class="newsbox">
+				<h2>Обновление 0.0.2</h2>
+				<br><br>
+				<h3>Добавлено:</h3><br>
+				<h3 style="padding-left: 10px;">
+				-Презентабельный вид для показа Севе.
+				<br><br>
+				-Да.</h3><br><br>
+				<div class="authorbox">От: Бибиджон Беброувич</div>
+			</div>
+			<div class="newsbox" style="margin-bottom: 50px;">
+				<h2>Обновление 0.0.1</h2>
+				<br><br>
+				<h3>Добавлено:</h3><br>
+				<h3 style="padding-left: 10px;">
+				Рабочие ссылки классы, расы, и т.д. на главной странице.
+				<br><br>
+				Дизайн ссылок и текста.</h3><br><br>
+				<div class="authorbox">От: Бибиджон Беброувич</div>
+			</div>
+		</main>
+
+		<script>
+			function toggleMenu() {
+				const sidebar = document.querySelector('.sidebar');
+				sidebar.classList.toggle('active');
+			}
+			// Авто-закрытие при клике на ссылки
+			document.querySelectorAll('.sidebar a, .sidebar select').forEach(link => {
+				link.addEventListener('click', () => {
+					const sidebar = document.querySelector('.sidebar');
+					// Убираем активный класс, чтобы меню уехало назад
+					sidebar.classList.remove('active');
+				});
+			});
+		</script>
+
+		<script>
+			window.addEventListener('DOMContentLoaded', (event) => {
+				new PagefindUI({
+					element: "#search",
+					translations: {
+						placeholder: "Поиск",
+						clear_search: "Очистить",
+						load_more: "Показать еще",
+						search_label: "Поиск по сайту",
+						filters_label: "Фильтры",
+						zero_results: "Ничего не найдено по запросу [SEARCH_TERM]",
+						many_results: "Найдено [COUNT] результатов для [SEARCH_TERM]",
+						one_result: "Найден [COUNT] результат для [SEARCH_TERM]",
+						alt_search: "Ничего не найдено по запросу [SEARCH_TERM]. Показаны результаты по запросу [DIFFERENT_TERM] вместо этого",
+						search_suggestion: "Ничего не найдено по запросу [SEARCH_TERM]. Попробуйте один из следующих вариантов:",
+						searching: "Поиск по запросу [SEARCH_TERM]..."
+					}
+				});
+			});
+		</script>
+
+		<script>
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('sw.js');
+			}
+		</script>
+	</body>
+</html>
