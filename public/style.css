@@ -257,3 +257,48 @@ main {
 		max-width: 160px;
 	}
 }
+@media screen and (max-width: 384px) {
+	.menu-toggle {
+		display: flex;/* Показывает на мобиле */
+	}
+	.sidebar {
+		left: -350px; /* Прячет за экран */
+		transition: 0.4s;
+	}
+	/* Когда есть класс 'active' -> выезжает */
+	.sidebar.active {
+		left: 0;
+	}
+	.newsbox {
+		margin-left: 20px;
+		max-width: 320px;
+		font-size: 14px;
+	}
+	.content {
+		margin-left: 32px;
+		font-size: 21px;
+	}
+	main {
+		margin-left: 0 !important;
+		padding-top: 80px; /* Чтобы контент не залезал под кнопку */
+	}
+	.sidebar {
+		width: 200px;
+		font-size: 14px;
+	}
+	.mainpage {
+	position: absolute;
+	top: 25px;
+	left: 15px;
+	font-size: 32px;
+	}
+	.secondmainpage {
+		position: absolute;
+		top: 82px;
+		left: 25px;
+		font-size: 32px;
+	}
+	#authorSelect {
+		max-width: 160px;
+	}
+}
