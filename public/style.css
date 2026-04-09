@@ -134,9 +134,9 @@ main {
 	font-size: 30px;
 }
 
-/* Стили кнопки-гамбургера */
+/* Стили кнопки сайдбара */
 .menu-toggle {
-	display: none; /* Скрыта на компах */
+	display: none; /* Скрыто */
 	position: fixed;
 	top: 20px;
 	right: 20px;
@@ -157,7 +157,7 @@ main {
 	transition: 0.3s;
 }
 
-/* Адаптив для мобилок/адаптация махораги на размер окна */
+/* Адаптация махораги на размер окна */
 @media screen and (max-width: 1920px) {
 	.newsbox {
 		margin-left: 270px;
@@ -257,7 +257,7 @@ main {
 		max-width: 160px;
 	}
 }
-@media screen and (max-width: 384px) {
+@media screen and (max-width: 360px) {
 	.menu-toggle {
 		display: flex;/* Показывает на мобиле */
 	}
@@ -270,12 +270,12 @@ main {
 		left: 0;
 	}
 	.newsbox {
-		margin-left: 20px;
-		max-width: 320px;
+		margin-left: 10px;
+		max-width: 310px;
 		font-size: 14px;
 	}
 	.content {
-		margin-left: 32px;
+		margin-left: 21px;
 		font-size: 21px;
 	}
 	main {
