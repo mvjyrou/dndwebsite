@@ -1,3 +1,8 @@
 
 1) ./pagefind.exe --site public --force-language ru ---> индексирование страниц для поиска
 2) npx workbox-cli generateSW workbox-config.js ---> кеширование страниц и файлов для оффлайн
+
+Также теперь буду юзать пути - "корень" сайта -> /dndwebsite/
+
+
+

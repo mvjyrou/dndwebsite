@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>worlds.dnd</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="../pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="../pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="../style.css">
+		<link rel="stylesheet" href="../adaptsize.css">
+		<style>
+			body {
+				background: fixed url("../../images/bgmainpage.png") no-repeat center/cover;
+				border-image: fill 0 linear-gradient(#0002, #0009)
+			}
+		</style>
+		<link rel="manifest" href="../../manifest.json">
+	</head>
+	<body>
+		<div class="menu-toggle" onclick="toggleMenu()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="sidebar" data-pagefind-ignore>
+			<!--Main page-->
+			<div class="mainpage"><a href="../index.html"><b>worlds.dnd</b></a></div>
+			<!--All links-->
+			<div class="insidebar">
+				<h2>Выбери редакцию:</h2>
+				<select id="authorSelect" onchange="if(this.value) location.href=this.value+'.html';">
+					<option value="../index" selected disabled>-- ГЛАВНАЯ СТРАНИЦА --</option>
+					<option value="../Vovainfo/Vova" >Механики+ от Вовы</option>
+					<option value="../Maxinfo/Max" >Былина</option>
+					<option value="../Sevainfo/Seva" >Бри</option>
+				</select>
+				<div class="links">
+					<ul><h2>
+						<li><a href="../classes.html">классы</a></li>
+						<li><a href="../races.html">расы</a></li>
+						<li><a href="../spells.html">заклинания</a></li>
+						<li><a href="../items.html">предметы</a></li>
+						<li><a href="../monsters.html">монстры</a></li>
+						<li><a href="../mechanics.html">механики</a></li>
+						<li><a href="../plot.html">лор</a></li>
+						<li><a href="../rules.html">правила<br>редакции</a></li>
+					</h2></ul>
+				</div>
+				<!--Dice D20-->
+				<img src="https://www.svgrepo.com/show/515940/dnd-5e-character-keep.svg" alt="D20 dice" style="position: absolute; width: 100%; bottom: 0px; left: 5px;">
+			</div>
+		</div>
+
+		<main>
+			<div id="search" style="margin-left: 10px; padding: 50px;"></div>
+			<div class="box" style="margin-left: 20px; margin-right: 20px; max-width: 100%;">
+				<span style="font-size: 28px;">Монах пути нерушимого тела</span><br>
+				<div class="description-text">Новый путь монаха, представленный в вселенной "D&D Курьеры"</div><br>
+				Обучаемые в храме пути нерушимого тела, становятся либо Старейшинами и Лидерами храмов, либо в виде исключения могут стать даже Курьерами, но говорят - для этого требуется невероятный талант и усердие даже от гениев...
+				<br><br><br>
+				<div class="authorbox">Из: Механики+ от Вовы</div>
+			</div>
+		</main>
+
+		<script>
+			function toggleMenu() {
+				const sidebar = document.querySelector('.sidebar');
+				sidebar.classList.toggle('active');
+			}
+			// Авто-закрытие при клике на ссылки
+			document.querySelectorAll('.sidebar a,').forEach(link => {
+				link.addEventListener('click', () => {
+					const sidebar = document.querySelector('.sidebar');
+					// Убираем активный класс, чтобы меню уехало назад
+					sidebar.classList.remove('active');
+				});
+			});
+		</script>
+		<script>
+			window.addEventListener('DOMContentLoaded', (event) => {
+				new PagefindUI({
+					element: "#search",
+					translations: {
+						placeholder: "Поиск",
+						clear_search: "Очистить",
+						load_more: "Показать еще",
+						search_label: "Поиск по сайту",
+						filters_label: "Фильтры",
+						zero_results: "Ничего не найдено по запросу [SEARCH_TERM]",
+						many_results: "Найдено [COUNT] результатов для [SEARCH_TERM]",
+						one_result: "Найден [COUNT] результат для [SEARCH_TERM]",
+						alt_search: "Ничего не найдено по запросу [SEARCH_TERM]. Показаны результаты по запросу [DIFFERENT_TERM] вместо этого",
+						search_suggestion: "Ничего не найдено по запросу [SEARCH_TERM]. Попробуйте один из следующих вариантов:",
+						searching: "Поиск по запросу [SEARCH_TERM]..."
+					}
+				});
+			});
+		</script>
+		<script>
+			const isPWA = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+			if ('serviceWorker' in navigator) {
+				if (isPWA) {
+					// РЕЖИМ ПРИЛОЖЕНИЯ: Регистрируем и следим за обновлениями
+					window.addEventListener('load', () => {
+						navigator.serviceWorker.register('../sw.js').then(reg => {
+							console.log('PWA активен');
+							
+							reg.addEventListener('updatefound', () => {
+								const newWorker = reg.installing;
+								newWorker.addEventListener('statechange', () => {
+									if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+										if (confirm('Доступна новая версия! Обновить?')) {
+											newWorker.postMessage({ type: 'SKIP_WAITING' });
+											window.location.reload();
+										}
+									}
+								});
+							});
+						});
+					});
+				}
+				else {
+					// РЕЖИМ БРАУЗЕРА: Удаляем SW, чтобы не занимать место кэшем
+					navigator.serviceWorker.getRegistrations().then(registrations => {
+						for (let registration of registrations) {
+							registration.unregister();
+						}
+					});
+				}
+			}
+		</script>
+	</body>
+</html>
